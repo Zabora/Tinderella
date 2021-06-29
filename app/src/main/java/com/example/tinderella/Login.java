@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity {
         if (user != null && user.isEmailVerified()) {
           pBar.setVisibility(View.VISIBLE);
 
-          Intent i = new Intent(Login.this, MainActivity2.class);
+          Intent i = new Intent(Login.this, MainActivity.class);
           startActivity(i);
           finish();
 
@@ -96,7 +96,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                   } else {
                     if (auth.getCurrentUser().isEmailVerified()) {
-                      Intent i = new Intent(Login.this, MainActivity2.class);
+                      Intent i = new Intent(Login.this, MainActivity.class);
                       startActivity(i);
                       finish();
                     } else {

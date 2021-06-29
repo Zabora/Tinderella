@@ -64,7 +64,7 @@ public class Register extends AppCompatActivity {
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null && user.isEmailVerified()) {
-          Intent i = new Intent(Register.this, MainActivity2.class);
+          Intent i = new Intent(Register.this, MainActivity.class);
           startActivity(i);
           finish();
         }
