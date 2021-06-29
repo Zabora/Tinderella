@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "436453054876",
+    "firebase_url": "https://tinderella-6fd51-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tinderella-6fd51",
+    "storage_bucket": "tinderella-6fd51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436453054876:android:1385cfdc1fffd040e5d059",
+        "android_client_info": {
+          "package_name": "com.example.tinderella"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436453054876-m369ufdn17v3k07vcuguq0kqdfb98lg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8zC0Df9L4Ej3NfhjizDfBw0XajLl2kJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436453054876-m369ufdn17v3k07vcuguq0kqdfb98lg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
