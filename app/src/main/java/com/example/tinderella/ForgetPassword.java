@@ -33,8 +33,10 @@ public class ForgetPassword extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_forget_password);
 
-    resetPasswordBtn = (Button) findViewById(R.id.resetPasswordBtn);
     pBar = (ProgressBar) findViewById(R.id.pBar);
+    pBar.setVisibility(View.GONE);
+
+    resetPasswordBtn = (Button) findViewById(R.id.resetPasswordBtn);
     emailEditText = (EditText) findViewById(R.id.email);
 
     auth = FirebaseAuth.getInstance();
@@ -55,9 +57,12 @@ public class ForgetPassword extends AppCompatActivity {
                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                   if (task.isSuccessful()) {
                     Toast.makeText(ForgetPassword.this, "Check your email box for password reset instructions.", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                   } else {
                     Toast.makeText(ForgetPassword.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                   }
+
+                  pBar.setVisibility(View.GONE);
                 }
               });
             }
