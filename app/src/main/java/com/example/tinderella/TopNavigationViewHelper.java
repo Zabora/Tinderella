@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.core.Context;
+import android.content.Context;
 
 public class TopNavigationViewHelper {
     private static final String TAG = "TopNAvigationViewHelper";
