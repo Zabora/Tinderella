@@ -138,6 +138,8 @@ public class SettingsActivity extends AppCompatActivity {
       public void onClick(View v) {
         pBar.setVisibility(View.VISIBLE);
 
+        // TODO: Here should be saveInfo method???
+
         Intent i = new Intent(SettingsActivity.this, MainActivity.class);
         startActivity(i);
         finish();
@@ -190,7 +192,7 @@ public class SettingsActivity extends AppCompatActivity {
       auth.signOut();
       Toast.makeText(SettingsActivity.this, "Log out successfully", Toast.LENGTH_SHORT).show();
 
-      Intent i = new Intent(SettingsActivity.this, MainActivity.class);
+      Intent i = new Intent(SettingsActivity.this, Login_or_Register.class);
       startActivity(i);
       finish();
 

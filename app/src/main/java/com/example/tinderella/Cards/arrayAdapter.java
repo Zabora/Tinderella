@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.tinderella.R;
 
 import java.util.List;
@@ -77,7 +78,7 @@ public class arrayAdapter extends ArrayAdapter<cards> {
                 break;
             default:
                 Glide.clear(image);
-                Glide.with(convertView.getContext()).load(card_item.getProfileImageUrl()).load(image);
+                Glide.with(convertView.getContext()).load(card_item.getProfileImageUrl()).into(image);
                 break;
         }
 
