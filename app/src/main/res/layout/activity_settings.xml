@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/settings_toolbartag"
+            android:id="@+id/settings_toolbar"
             layout="@layout/toolbar_settings"/>
 
         <ScrollView
@@ -40,6 +40,7 @@
                         android:layout_weight="1"/>
 
                     <ImageView
+                        android:id="@+id/profileImage"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginBottom="20sp"
@@ -165,6 +166,7 @@
                     android:background="@color/grey"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
