@@ -12,7 +12,7 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Tinderella">
-    <activity android:name=".Chat"></activity>
+    <activity android:name=".chat.Chat"></activity>
     <activity android:name=".MatchesActivity" />
     <activity android:name=".SettingsActivity" />
     <activity android:name=".ForgetPassword" />

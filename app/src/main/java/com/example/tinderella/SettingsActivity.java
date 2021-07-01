@@ -255,6 +255,7 @@ public class SettingsActivity extends AppCompatActivity {
   }
 
   public void deleteMatch(String matchId, String chatId) {
+    // TODO: I am not sure that it is correct (look to Chat->deleteMatch)
     DatabaseReference matchInUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("connections").child("matches").child(matchId);
     DatabaseReference userInMatchRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("connections").child("matches").child(userId);
 
