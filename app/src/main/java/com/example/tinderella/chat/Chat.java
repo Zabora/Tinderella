@@ -78,6 +78,39 @@ public class Chat extends AppCompatActivity {
     matchBudget = getIntent().getExtras().getString("budget");
     matchProfile = getIntent().getExtras().getString("profile");
 
+    DatabaseReference matchRef = FirebaseDatabase.getInstance().getReference().child("Users").child(matchId);
+    matchRef.addValueEventListener(new ValueEventListener() {
+      @Override
+      public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+        if (snapshot.exists()) {
+          if (snapshot.child("name").exists()) {
+            matchName = snapshot.child("name").getValue().toString();
+          }
+
+          if (snapshot.child("give").exists()) {
+            matchGive = snapshot.child("give").getValue().toString();
+          }
+
+          if (snapshot.child("need").exists()) {
+            matchNeed = snapshot.child("need").getValue().toString();
+          }
+
+          if (snapshot.child("budget").exists()) {
+            matchBudget = snapshot.child("budget").getValue().toString();
+          }
+
+          if (snapshot.child("profileImageUrl").exists()) {
+            matchProfile = snapshot.child("profileImageUrl").getValue().toString();
+          }
+        }
+      }
+
+      @Override
+      public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+      }
+    });
+
     currentUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     mDatabaseUser = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID)
         .child("connections").child("matches").child(matchId).child("ChatId");
@@ -300,6 +333,7 @@ public class Chat extends AppCompatActivity {
         Glide.with(popupView.getContext()).load(R.drawable.profile).into(image);
         break;
       default:
+        System.out.println(matchProfile);
         Glide.clear(image);
         Glide.with(popupView.getContext()).load(matchProfile).into(image);
         break;
@@ -312,7 +346,7 @@ public class Chat extends AppCompatActivity {
 
     hideSoftKeyBoard();
 
-    popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
+    popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
     popupView.setOnTouchListener(new View.OnTouchListener() {
       @Override
       public boolean onTouch(View v, MotionEvent event) {
