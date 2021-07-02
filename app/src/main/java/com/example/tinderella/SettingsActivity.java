@@ -139,6 +139,7 @@ public class SettingsActivity extends AppCompatActivity {
         pBar.setVisibility(View.VISIBLE);
 
         // TODO: Here should be saveInfo method???
+        saveUserInfo();
 
         Intent i = new Intent(SettingsActivity.this, MainActivity.class);
         startActivity(i);
@@ -359,8 +360,8 @@ public class SettingsActivity extends AppCompatActivity {
     userInfo.put("name", name);
     userInfo.put("phone", phone);
     userInfo.put("budget", budget);
-    userInfo.put("give", give);
-    userInfo.put("need", need);
+    userInfo.put("give", userGive);
+    userInfo.put("need", userNeed);
 
     userDatabase.updateChildren(userInfo);
     if (resultUri != null) {
