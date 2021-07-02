@@ -25,7 +25,7 @@ public class TopNavigationViewHelper {
                         context.startActivity(i);
                         break;
                     case R.id.ic_matched:
-                        Intent i1 = new Intent(context, MatchesActivity.class);
+                        Intent i1 = new Intent(context, com.example.tinderella.Matches.MatchesActivity.class);
                         context.startActivity(i1);
                         break;
                 }

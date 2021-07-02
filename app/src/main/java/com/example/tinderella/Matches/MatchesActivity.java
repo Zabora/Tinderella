@@ -11,6 +11,7 @@ import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.tinderella.MainActivity;
 import com.example.tinderella.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -56,7 +57,7 @@ public class MatchesActivity extends AppCompatActivity {
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MatchesActivity.this, MatchesActivity.class);
+                Intent intent = new Intent(MatchesActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 return;

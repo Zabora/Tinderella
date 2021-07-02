@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -433,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setupTopNavigationView() {
         Log.d("", "setupTopNavigationView: setting up TopNavigationView");
-        BottomNavigationViewEx tvEx = findViewById(R.id.topNavViewBar);
+        BottomNavigationView tvEx = findViewById(R.id.topNavViewBar);
         TopNavigationViewHelper.setupTopNavigationView(tvEx);
         TopNavigationViewHelper.enableNavigation(MainActivity.this, tvEx);
         Menu menu = tvEx.getMenu();

@@ -29,7 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.tinderella.MatchesActivity;
+import com.example.tinderella.Matches.MatchesActivity;
 import com.example.tinderella.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -122,7 +122,7 @@ public class Chat extends AppCompatActivity {
     mBack.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent i = new Intent(Chat.this, MatchesActivity.class);
+        Intent i = new Intent(Chat.this, com.example.tinderella.Matches.MatchesActivity.class);
         startActivity(i);
         finish();
       }
