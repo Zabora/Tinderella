@@ -81,6 +81,7 @@ public class Chat extends AppCompatActivity {
     currentUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     mDatabaseUser = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID)
         .child("connections").child("matches").child(matchId).child("ChatId");
+    mDatabaseChat = FirebaseDatabase.getInstance().getReference().child("Chat");
 
     getChatId();
 
@@ -244,7 +245,7 @@ public class Chat extends AppCompatActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.chat_menu, menu);
-    TextView mMatchNameTextView = (TextView) findViewById(R.id.chatToolbar);
+    TextView mMatchNameTextView = (TextView) findViewById(R.id.chatToolbarName);
     mMatchNameTextView.setText(matchName);
     return true;
   }
@@ -339,6 +340,7 @@ public class Chat extends AppCompatActivity {
       public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
         if (snapshot.exists()) {
           chatId = snapshot.getValue().toString();
+          System.out.println(chatId);
           mDatabaseChat = mDatabaseChat.child(chatId);
           getChatMessages();
         }

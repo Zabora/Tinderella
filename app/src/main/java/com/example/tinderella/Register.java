@@ -109,7 +109,7 @@ public class Register extends AppCompatActivity {
                           Map<String, Object> userInfo = new HashMap<>();
                           userInfo.put("name", nameEditText.getText().toString());
                           userInfo.put("phone", phoneEditText.getText().toString());
-                          userInfo.put("profileImageURL", "default");
+                          userInfo.put("profileImageUrl", "default");
 
                           currentUser.updateChildren(userInfo);
                           

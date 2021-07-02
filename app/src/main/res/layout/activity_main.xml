@@ -76,7 +76,7 @@
                             android:background="@drawable/rounded_corner_layout"
                             android:elevation="7dp"
                             android:padding="10dp"
-                            android:onClick="DislikeBtn"
+                            android:onClick="LikeBtn"
                             android:src="@drawable/like2"/>
 
                     </LinearLayout>
