@@ -365,7 +365,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     userDatabase.updateChildren(userInfo);
     if (resultUri != null) {
-      StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profileImages").child(userId);
+      StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profileImageUrl").child(userId);
 
       Bitmap bitmap = null;
       try {
@@ -395,7 +395,7 @@ public class SettingsActivity extends AppCompatActivity {
           Uri downloadUri = uri.getResult();
 
           Map<String, Object> userUri = new HashMap<String, Object>();
-          userUri.put("profileImages", downloadUri.toString());
+          userUri.put("profileImageUrl", downloadUri.toString());
           userDatabase.updateChildren(userUri);
 
           finish();

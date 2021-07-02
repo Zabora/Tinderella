@@ -333,7 +333,6 @@ public class Chat extends AppCompatActivity {
         Glide.with(popupView.getContext()).load(R.drawable.profile).into(image);
         break;
       default:
-        System.out.println(matchProfile);
         Glide.clear(image);
         Glide.with(popupView.getContext()).load(matchProfile).into(image);
         break;
@@ -374,7 +373,6 @@ public class Chat extends AppCompatActivity {
       public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
         if (snapshot.exists()) {
           chatId = snapshot.getValue().toString();
-          System.out.println(chatId);
           mDatabaseChat = mDatabaseChat.child(chatId);
           getChatMessages();
         }

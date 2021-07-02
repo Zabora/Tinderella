@@ -40,11 +40,11 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolders> {
     public void onBindViewHolder(@NonNull MatchesViewHolders holder, int position) {
         holder.mMatchId.setText(matchesList.get(position).getUserId());
         holder.mBudget.setText(matchesList.get(position).getBudget());
-        holder.mGive.setText(matchesList.get(position).getUserId());
-        holder.mProfile.setText(matchesList.get(position).getUserId());
-        holder.mNeed.setText(matchesList.get(position).getUserId());
+        holder.mGive.setText(matchesList.get(position).getGive());
+        holder.mProfile.setText(matchesList.get(position).getProfileImageUrl());
+        holder.mNeed.setText(matchesList.get(position).getNeed());
         holder.mMatchName.setText(matchesList.get(position).getName());
-        holder.mLastMessage.setText(matchesList.get(position).getUserId());
+        holder.mLastMessage.setText(matchesList.get(position).getLastMessage());
         String lastSeen ="";
         lastSeen = matchesList.get(position).getLastSeen();
         if(lastSeen.equals("true"))
