@@ -66,6 +66,7 @@ public class BtnDisLikeActivity extends AppCompatActivity {
 
     }
 
-    public void LikeBtn(View view) {
+
+    public void DisLikeBtn(View view) {
     }
 }

@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 public class BtnLikeActivity extends AppCompatActivity {
 
     private static final String TAG = "BtnLikeActivity";
@@ -66,4 +67,5 @@ public class BtnLikeActivity extends AppCompatActivity {
 
     public void LikeBtn(View view) {
     }
+
 }
