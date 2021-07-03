@@ -49,7 +49,7 @@ public class arrayAdapter extends ArrayAdapter<cards> {
             mNeedImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.hulu));
         else if (card_item.getNeed().equals("Vudu"))
             mNeedImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.vudu));
-        else if (card_item.getNeed().equals("HBO Now"))
+        else if (card_item.getNeed().equals("HBO GO"))
             mNeedImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.hbo));
         else if (card_item.getNeed().equals("Youtube Orginals"))
             mNeedImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.youtube));
@@ -65,7 +65,7 @@ public class arrayAdapter extends ArrayAdapter<cards> {
             mGiveImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.hulu));
         else if (card_item.getGive().equals("Vudu"))
             mGiveImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.vudu));
-        else if (card_item.getGive().equals("HBO Now"))
+        else if (card_item.getGive().equals("HBO GO"))
             mGiveImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.hbo));
         else if (card_item.getGive().equals("Youtube Orginals"))
             mGiveImage.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.youtube));

@@ -305,7 +305,7 @@ public class Chat extends AppCompatActivity {
       mNeedImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.hulu));
     else if (matchNeed.equals("Vudu"))
       mNeedImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.vudu));
-    else if (matchNeed.equals("HBO Now"))
+    else if (matchNeed.equals("HBO GO"))
       mNeedImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.hbo));
     else if (matchNeed.equals("Youtube Orginals"))
       mNeedImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.youtube));
@@ -321,7 +321,7 @@ public class Chat extends AppCompatActivity {
       mGiveImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.hulu));
     else if (matchGive.equals("Vudu"))
       mGiveImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.vudu));
-    else if (matchGive.equals("HBO Now"))
+    else if (matchGive.equals("HBO GO"))
       mGiveImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.hbo));
     else if (matchGive.equals("Youtube Orginals"))
       mGiveImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.youtube));
