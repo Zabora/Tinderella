@@ -12,6 +12,8 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Tinderella">
+    <activity android:name=".BtnLikeActivity"/>
+    <activity android:name=".BtnDisLikeActivity"/>
     <activity android:name=".chat.Chat"/>
     <activity android:name=".Matches.MatchesActivity"/>
     <activity android:name=".SettingsActivity" />

@@ -1,12 +1,9 @@
 package com.example.tinderella;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,8 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.tinderella.GarbledCircuit.AliceRunnable;
+import com.example.tinderella.GarbledCircuit.BobRunnable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,8 +28,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
@@ -40,6 +35,7 @@ import com.onesignal.OneSignal;
 import com.example.tinderella.Cards.arrayAdapter;
 import com.example.tinderella.Cards.cards;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -189,8 +185,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Item Clicked", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     private void showToolTip_profile(ShowCasePosition position) {
@@ -214,6 +208,26 @@ public class MainActivity extends AppCompatActivity {
         if (rowItems.size() != 0) {
             cards card_item = rowItems.get(0);
             String userId = card_item.getUserId();
+
+            // protocol START
+            usersDb.child(currentUId).child("queries").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        Thread b = new Thread(new BobRunnable(currentUId, userId, false));
+                        b.start();
+                    } else {
+                        Thread a = new Thread(new AliceRunnable(currentUId, userId, false));
+                        a.start();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) { }
+            });
+            // protocol END
+
+
             usersDb.child(userId).child("connections").child("nope").child(currentUId).setValue(true);
             Toast.makeText(MainActivity.this, "Left", Toast.LENGTH_SHORT).show();
 
@@ -239,6 +253,25 @@ public class MainActivity extends AppCompatActivity {
         if (rowItems.size() != 0) {
             cards card_item = rowItems.get(0);
             String userId = card_item.getUserId();
+
+            // protocol START
+            usersDb.child(currentUId).child("queries").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        Thread b = new Thread(new BobRunnable(currentUId, userId, true));
+                        b.start();
+                    } else {
+                        Thread a = new Thread(new AliceRunnable(currentUId, userId, true));
+                        a.start();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) { }
+            });
+            // protocol END
+
             //check matches
             usersDb.child(userId).child("connections").child("yeps").child(currentUId).setValue(true);
             isConnectionMatch(userId);

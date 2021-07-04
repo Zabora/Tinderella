@@ -10,7 +10,9 @@
       android:layout_height="match_parent"
       android:background="@color/main"
       app:menu="@menu/top_navigation_toolbar"
-      app:itemHorizontalTranslationEnabled="true" />
+      app:itemHorizontalTranslationEnabled="true"
+      android:layout_marginBottom="-20dp"
+      />
 
 
 </LinearLayout>

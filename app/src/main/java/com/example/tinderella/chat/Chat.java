@@ -213,6 +213,8 @@ public class Chat extends AppCompatActivity {
       updateLastMessage();
       seenMessage(sendMessageText);
       newMessageDB.setValue(newMessage);
+
+      //new com.example.tinderella.SendNotification("You have a new match!", "", notification, null, null );
     }
 
     mSendEditText.setText(null);
